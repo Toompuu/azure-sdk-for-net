@@ -17,6 +17,8 @@ namespace Azure.Communication.Sms
             writer.WriteStartObject();
             writer.WritePropertyName("enableDeliveryReport");
             writer.WriteBooleanValue(EnableDeliveryReport);
+            writer.WritePropertyName("validityPeriodSeconds");
+            writer.WriteNumberValue(ValidityPeriodSeconds);
             if (Optional.IsDefined(Tag))
             {
                 writer.WritePropertyName("tag");

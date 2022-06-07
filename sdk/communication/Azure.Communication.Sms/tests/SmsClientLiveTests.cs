@@ -152,7 +152,8 @@ namespace Azure.Communication.Sms.Tests
                    message: "Hi",
                    options: new SmsSendOptions(enableDeliveryReport: true) // OPTIONAL
                    {
-                       Tag = "marketing", // custom tags
+                       Tag = "marketing", // custom tags,
+                       ValidityPeriodSeconds = 18000
                    });
                 assertRawResponseHappyPath(response.GetRawResponse().ContentStream ?? new MemoryStream());
                 foreach (SmsSendResult result in response.Value)
