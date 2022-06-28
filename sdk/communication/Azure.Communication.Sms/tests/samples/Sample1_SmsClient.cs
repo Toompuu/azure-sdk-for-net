@@ -48,6 +48,7 @@ namespace Azure.Communication.Sms.Tests.samples
                 message: "Weekly Promotion!",
                 options: new SmsSendOptions(enableDeliveryReport: true) // OPTIONAL
                 {
+                    ValidityPeriodSeconds = 333,//optional, default is 18000
                     Tag = "marketing", // custom tags
                 });
             foreach (SmsSendResult result in response.Value)
@@ -87,7 +88,7 @@ namespace Azure.Communication.Sms.Tests.samples
                 /*@@*/ from: TestEnvironment.FromPhoneNumber,
                 /*@@*/ to: new string[] { TestEnvironment.ToPhoneNumber, TestEnvironment.ToPhoneNumber },
                 message: "Weekly Promotion!",
-                options: new SmsSendOptions(enableDeliveryReport: true) // OPTIONAL
+                options: new SmsSendOptions(enableDeliveryReport: true, validityPeriodSeconds: 333) // OPTIONAL
                 {
                     Tag = "marketing", // custom tags
                 });
